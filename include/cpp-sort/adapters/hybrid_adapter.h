@@ -176,6 +176,14 @@ namespace cppsort
             }
     };
 
+    // We unwrap nested hybrid_adapter types to improve
+    // the accuracy of the iterator category
+
+    template<typename... Sorters1, typename... Sorters2>
+    class hybrid_adapter<hybrid_adapter<Sorters1...>, Sorters2...>:
+        public hybrid_adapter<Sorters1..., Sorters2...>
+    {};
+
     ////////////////////////////////////////////////////////////
     // Sorter traits
 

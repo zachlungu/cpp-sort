@@ -63,6 +63,7 @@ add_executable(
     sorter_facade.cpp
     sorter_facade_defaults.cpp
     sorter_facade_iterable.cpp
+    timsort-memcheck.cpp
     ${ADAPTERS_TESTS}
     ${PROBES_TESTS}
     ${SORTERS_TESTS}

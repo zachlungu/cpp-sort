@@ -231,7 +231,73 @@ namespace utility
         }
 
         ////////////////////////////////////////////////////////////
-        // Customization points basis
+        // Generic comparison functions
+
+        template<typename T>
+        constexpr auto partial_less(const T& lhs, const T& rhs)
+            -> bool
+        {
+            return partial_order(lhs, rhs) == partial_ordering::less;
+        }
+
+        template<typename T>
+        constexpr auto partial_unordered(const T& lhs, const T& rhs)
+            -> bool
+        {
+            return partial_order(lhs, rhs) == partial_ordering::unordered;
+        }
+
+        template<typename T>
+        constexpr auto partial_greater(const T& lhs, const T& rhs)
+            -> bool
+        {
+            return partial_order(lhs, rhs) == partial_ordering::greater;
+        }
+
+        template<typename T>
+        constexpr auto weak_less(const T& lhs, const T& rhs)
+            -> bool
+        {
+            return weak_order(lhs, rhs) == weak_ordering::less;
+        }
+
+        template<typename T>
+        constexpr auto weak_equivalence(const T& lhs, const T& rhs)
+            -> bool
+        {
+            return weak_order(lhs, rhs) == weak_ordering::equivalent;
+        }
+
+        template<typename T>
+        constexpr auto weak_greater(const T& lhs, const T& rhs)
+            -> bool
+        {
+            return weak_order(lhs, rhs) == weak_ordering::greater;
+        }
+
+        template<typename T>
+        constexpr auto total_less(const T& lhs, const T& rhs)
+            -> bool
+        {
+            return total_order(lhs, rhs) == total_ordering::less;
+        }
+
+        template<typename T>
+        constexpr auto total_equal(const T& lhs, const T& rhs)
+            -> bool
+        {
+            return total_order(lhs, rhs) == total_ordering::equal;
+        }
+
+        template<typename T>
+        constexpr auto total_greater(const T& lhs, const T& rhs)
+            -> bool
+        {
+            return total_order(lhs, rhs) == total_ordering::greater;
+        }
+
+        ////////////////////////////////////////////////////////////
+        // Customization points basis for ordering functions
 
         struct partial_order_fn
         {
@@ -262,6 +328,99 @@ namespace utility
                 return total_order(std::forward<T>(lhs), std::forward<U>(rhs));
             }
         };
+
+        ////////////////////////////////////////////////////////////
+        // Customization points basis for comparisons functions
+
+        struct partial_less_fn
+        {
+            template<typename T, typename U>
+            constexpr auto operator()(T&& lhs, U&& rhs) const
+                -> bool
+            {
+                return partial_less(std::forward<T>(lhs), std::forward<U>(rhs));
+            }
+        };
+
+        struct partial_unordered_fn
+        {
+            template<typename T, typename U>
+            constexpr auto operator()(T&& lhs, U&& rhs) const
+                -> bool
+            {
+                return partial_unordered(std::forward<T>(lhs), std::forward<U>(rhs));
+            }
+        };
+
+        struct partial_greater_fn
+        {
+            template<typename T, typename U>
+            constexpr auto operator()(T&& lhs, U&& rhs) const
+                -> bool
+            {
+                return partial_greater(std::forward<T>(lhs), std::forward<U>(rhs));
+            }
+        };
+
+        struct weak_less_fn
+        {
+            template<typename T, typename U>
+            constexpr auto operator()(T&& lhs, U&& rhs) const
+                -> bool
+            {
+                return weak_less(std::forward<T>(lhs), std::forward<U>(rhs));
+            }
+        };
+
+        struct weak_equivalence_fn
+        {
+            template<typename T, typename U>
+            constexpr auto operator()(T&& lhs, U&& rhs) const
+                -> bool
+            {
+                return weak_equivalence(std::forward<T>(lhs), std::forward<U>(rhs));
+            }
+        };
+
+        struct weak_greater_fn
+        {
+            template<typename T, typename U>
+            constexpr auto operator()(T&& lhs, U&& rhs) const
+                -> bool
+            {
+                return weak_greater(std::forward<T>(lhs), std::forward<U>(rhs));
+            }
+        };
+
+        struct total_less_fn
+        {
+            template<typename T, typename U>
+            constexpr auto operator()(T&& lhs, U&& rhs) const
+                -> bool
+            {
+                return total_less(std::forward<T>(lhs), std::forward<U>(rhs));
+            }
+        };
+
+        struct total_equal_fn
+        {
+            template<typename T, typename U>
+            constexpr auto operator()(T&& lhs, U&& rhs) const
+                -> bool
+            {
+                return total_equal(std::forward<T>(lhs), std::forward<U>(rhs));
+            }
+        };
+
+        struct total_greater_fn
+        {
+            template<typename T, typename U>
+            constexpr auto operator()(T&& lhs, U&& rhs) const
+                -> bool
+            {
+                return total_greater(std::forward<T>(lhs), std::forward<U>(rhs));
+            }
+        };
     }
 
     ////////////////////////////////////////////////////////////
@@ -279,6 +438,42 @@ namespace utility
 
         constexpr auto&& total_order = cppsort::detail::static_const<
             detail::total_order_fn
+        >::value;
+
+        constexpr auto&& partial_less = cppsort::detail::static_const<
+            detail::partial_less_fn
+        >::value;
+
+        constexpr auto&& partial_unordered = cppsort::detail::static_const<
+            detail::partial_unordered_fn
+        >::value;
+
+        constexpr auto&& partial_greater = cppsort::detail::static_const<
+            detail::partial_greater_fn
+        >::value;
+
+        constexpr auto&& weak_less = cppsort::detail::static_const<
+            detail::weak_less_fn
+        >::value;
+
+        constexpr auto&& weak_equivalence = cppsort::detail::static_const<
+            detail::weak_equivalence_fn
+        >::value;
+
+        constexpr auto&& weak_greater = cppsort::detail::static_const<
+            detail::weak_greater_fn
+        >::value;
+
+        constexpr auto&& total_less = cppsort::detail::static_const<
+            detail::total_less_fn
+        >::value;
+
+        constexpr auto&& total_equal = cppsort::detail::static_const<
+            detail::total_equal_fn
+        >::value;
+
+        constexpr auto&& total_greater = cppsort::detail::static_const<
+            detail::total_greater_fn
         >::value;
     }
 }}

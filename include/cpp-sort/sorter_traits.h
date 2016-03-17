@@ -32,9 +32,11 @@
 #include <iterator>
 #include <type_traits>
 #include <utility>
+#include <cpp-sort/fwd.h>
 #include <cpp-sort/utility/as_function.h>
 #include <cpp-sort/utility/detection.h>
 #include <cpp-sort/utility/functional.h>
+#include <cpp-sort/utility/is_callable.h>
 #include "detail/raw_checkers.h"
 
 namespace cppsort
@@ -78,6 +80,52 @@ namespace cppsort
     >
     constexpr bool is_projection_iterator
         = utility::is_detected_v<detail::is_projection_iterator_t, Projection, Iterator, Compare>;
+
+    ////////////////////////////////////////////////////////////
+    // Whether a type is a three-way comparator
+
+    namespace detail
+    {
+        template<
+            typename Compare, typename Iterable,
+            typename Projection, typename Ret,
+            typename ProjFunc = decltype(utility::as_function(std::declval<Projection&>()))
+        >
+        constexpr bool is_three_way_comp_impl =
+            utility::is_callable<Compare(
+                std::result_of_t<ProjFunc(decltype(*std::begin(std::declval<Iterable&>())))>,
+                std::result_of_t<ProjFunc(decltype(*std::end(std::declval<Iterable&>())))>
+            ), Ret>::value;
+
+        template<
+            typename Compare, typename Iterator,
+            typename Projection, typename Ret,
+            typename ProjFunc = decltype(utility::as_function(std::declval<Projection&>()))
+        >
+        constexpr bool is_three_way_comp_it_impl =
+            utility::is_callable<Compare(
+                std::result_of_t<ProjFunc(decltype(*std::declval<Iterator&>()))>,
+                std::result_of_t<ProjFunc(decltype(*std::declval<Iterator&>()))>
+            ), Ret>::value;
+    }
+
+    template<
+        typename Compare, typename Iterable,
+        typename Projection = utility::identity
+    >
+    constexpr bool is_three_way_comparison =
+        detail::is_three_way_comp_impl<Compare, Iterable, Projection, utility::partial_ordering> ||
+        detail::is_three_way_comp_impl<Compare, Iterable, Projection, utility::weak_ordering> ||
+        detail::is_three_way_comp_impl<Compare, Iterable, Projection, utility::total_ordering>;
+
+    template<
+        typename Compare, typename Iterator,
+        typename Projection = utility::identity
+    >
+    constexpr bool is_three_way_comparison_iterator =
+        detail::is_three_way_comp_it_impl<Compare, Iterator, Projection, utility::partial_ordering> ||
+        detail::is_three_way_comp_it_impl<Compare, Iterator, Projection, utility::weak_ordering> ||
+        detail::is_three_way_comp_it_impl<Compare, Iterator, Projection, utility::total_ordering>;
 
     ////////////////////////////////////////////////////////////
     // Sorter type categories

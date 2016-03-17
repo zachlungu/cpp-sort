@@ -91,6 +91,17 @@ namespace cppsort
     struct small_array_adapter;
     template<typename Sorter>
     struct stable_adapter;
+
+    ////////////////////////////////////////////////////////////
+    // Utilities
+
+    namespace utility
+    {
+        // Orders
+        enum struct partial_ordering: int;
+        enum struct total_ordering: int;
+        enum struct weak_ordering: int;
+    }
 }
 
 #endif // CPPSORT_FWD_H_

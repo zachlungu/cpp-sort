@@ -667,10 +667,11 @@ TEST_CASE( "potential Valgrind error in timsort", "[sorters]" )
     // Apparently Valgrind finds problems in TimSort, this is a
     // reduced test case
 
-    std::deque<double> collection(35);
-    std::iota(std::begin(collection), std::end(collection), 0.0);
-    std::mt19937 engine(std::time(nullptr));
-    std::shuffle(std::begin(collection), std::end(collection), engine);
+    std::deque<int> collection = {
+        -18, -33, -14, -38, -35, -22, -41, -21, -40, -43, -17, -39,
+        -32, -30, -37, -34, -23, -20, -42, -16, -36, -46, -26, -44,
+        -13, -24, -28, -25, -47, -15, -27, -45, -19, -29, -31
+    };
 
     gfx::timsort(std::begin(collection), std::end(collection));
     CHECK( std::is_sorted(std::begin(collection), std::end(collection)) );

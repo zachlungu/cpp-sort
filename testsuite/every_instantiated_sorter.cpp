@@ -24,9 +24,11 @@
 #include <algorithm>
 #include <ctime>
 #include <deque>
+#include <iostream>
 #include <iterator>
 #include <numeric>
 #include <random>
+#include <vector>
 #include <catch.hpp>
 #include <cpp-sort/sorters.h>
 
@@ -40,10 +42,15 @@ TEST_CASE( "test every instantiated sorter", "[sorters]" )
     // Only default_sorter doesn't have a standard instance
     // since it is already used by default by cppsort::sort
 
-    std::deque<double> collection(35);
+    std::vector<double> collection(35);
     std::iota(std::begin(collection), std::end(collection), -47.0);
     std::mt19937 engine(std::time(nullptr));
     std::shuffle(std::begin(collection), std::end(collection), engine);
+
+    for (double val: collection)
+    {
+        std::cout << val << ' ';
+    }
 
     SECTION( "block_sort" )
     {

@@ -107,6 +107,13 @@ TEST_CASE( "every sorter with stable adapter",
         CHECK( std::is_sorted(std::begin(collection), std::end(collection)) );
     }
 
+    SECTION( "mel_sorter" )
+    {
+        using sorter = cppsort::mel_sorter;
+        cppsort::stable_sort(collection, sorter{}, &wrapper::value);
+        CHECK( std::is_sorted(std::begin(collection), std::end(collection)) );
+    }
+
     SECTION( "merge_insertion_sorter" )
     {
         using sorter = cppsort::merge_insertion_sorter;

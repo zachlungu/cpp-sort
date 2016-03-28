@@ -89,6 +89,12 @@ TEST_CASE( "test every sorter", "[sorters]" )
         CHECK( std::is_sorted(std::begin(collection), std::end(collection)) );
     }
 
+    SECTION( "mel_sorter" )
+    {
+        cppsort::sort(collection, cppsort::mel_sorter{});
+        CHECK( std::is_sorted(std::begin(collection), std::end(collection)) );
+    }
+
     SECTION( "merge_insertion_sorter" )
     {
         cppsort::sort(collection, cppsort::merge_insertion_sorter{});

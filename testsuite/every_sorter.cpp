@@ -137,6 +137,12 @@ TEST_CASE( "test every sorter", "[sorters]" )
         CHECK( std::is_sorted(std::begin(collection), std::end(collection)) );
     }
 
+    SECTION( "sss_sorter" )
+    {
+        cppsort::sort(cppsort::sss_sorter{}, collection);
+        CHECK( std::is_sorted(std::begin(collection), std::end(collection)) );
+    }
+
     SECTION( "std_sorter" )
     {
         cppsort::sort(cppsort::std_sorter{}, collection);

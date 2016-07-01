@@ -61,6 +61,7 @@ namespace cppsort
     struct selection_sorter;
     struct smooth_sorter;
     struct spread_sorter;
+    struct sss_sorter;
     struct std_sorter;
     struct string_spread_sorter;
     struct tim_sorter;

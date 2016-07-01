@@ -123,6 +123,12 @@ TEST_CASE( "test every instantiated sorter", "[sorters]" )
         CHECK( std::is_sorted(std::begin(collection), std::end(collection)) );
     }
 
+    SECTION( "sss_sorter" )
+    {
+        cppsort::sss_sort(collection);
+        CHECK( std::is_sorted(std::begin(collection), std::end(collection)) );
+    }
+
     SECTION( "std_sorter" )
     {
         cppsort::std_sort(collection);

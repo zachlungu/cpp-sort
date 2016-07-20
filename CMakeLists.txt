@@ -6,7 +6,7 @@ cmake_minimum_required(VERSION 3.1.0)
 # can optionally be built with CMake. This is what this script does.
 #
 
-set(CMAKE_CXX_STANDARD 14)
+add_compile_options(-std=c++1z)
 
 # Optionally enable sanitizers
 if (UNIX AND SANITIZE)

@@ -74,7 +74,7 @@ namespace utility
 
     template<typename T>
     struct negation:
-        std::integral_constant<bool, not T::value>
+        std::bool_constant<not T::value>
     {};
 }}
 

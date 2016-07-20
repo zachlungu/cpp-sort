@@ -34,12 +34,6 @@ namespace cppsort
 namespace utility
 {
     ////////////////////////////////////////////////////////////
-    // std::void_t from C++17
-
-    template<typename...>
-    using void_t = void;
-
-    ////////////////////////////////////////////////////////////
     // std::nonesuch from Library Fundamentals TS v2
 
     struct nonesuch
@@ -71,7 +65,7 @@ namespace utility
             template<typename...> class Op,
             typename... Args
         >
-        struct detector<Default, void_t<Op<Args...>>, Op, Args...>
+        struct detector<Default, std::void_t<Op<Args...>>, Op, Args...>
         {
             using value_t = std::true_type;
             using type = Op<Args...>;

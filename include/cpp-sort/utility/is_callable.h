@@ -28,7 +28,6 @@
 // Headers
 ////////////////////////////////////////////////////////////
 #include <type_traits>
-#include <cpp-sort/utility/detection.h>
 
 namespace cppsort
 {
@@ -42,12 +41,12 @@ namespace utility
         {};
 
         template<typename Func, typename... Args>
-        struct is_callable_impl<Func(Args...), void, void_t<std::result_of_t<Func(Args...)>>>:
+        struct is_callable_impl<Func(Args...), void, std::void_t<std::result_of_t<Func(Args...)>>>:
             std::true_type
         {};
 
         template<typename Func, typename Ret, typename... Args>
-        struct is_callable_impl<Func(Args...), Ret, void_t<std::result_of_t<Func(Args...)>>>:
+        struct is_callable_impl<Func(Args...), Ret, std::void_t<std::result_of_t<Func(Args...)>>>:
             std::is_convertible<std::result_of_t<Func(Args...)>, Ret>
         {};
     }

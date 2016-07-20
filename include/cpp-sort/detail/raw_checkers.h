@@ -29,7 +29,6 @@
 ////////////////////////////////////////////////////////////
 #include <type_traits>
 #include <cpp-sort/utility/any_all.h>
-#include <cpp-sort/utility/detection.h>
 
 namespace cppsort
 {
@@ -44,7 +43,7 @@ namespace detail
     {};
 
     template<typename T>
-    struct has_iterator_category<T, utility::void_t<typename T::iterator_category>>:
+    struct has_iterator_category<T, std::void_t<typename T::iterator_category>>:
         std::true_type
     {};
 
@@ -73,7 +72,7 @@ namespace detail
     {};
 
     template<typename T>
-    struct has_is_always_stable<T, utility::void_t<typename T::is_always_stable>>:
+    struct has_is_always_stable<T, std::void_t<typename T::is_always_stable>>:
         std::true_type
     {};
 

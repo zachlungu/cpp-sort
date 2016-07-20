@@ -50,7 +50,7 @@ namespace cppsort
         };
 
         template<typename T>
-        struct has_domain<T, utility::void_t<typename T::domain>>:
+        struct has_domain<T, std::void_t<typename T::domain>>:
             std::true_type
         {
             using domain = typename T::domain;

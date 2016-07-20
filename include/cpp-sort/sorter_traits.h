@@ -36,7 +36,6 @@
 #include <cpp-sort/utility/detection.h>
 #include <cpp-sort/utility/functional.h>
 #include <cpp-sort/utility/is_callable.h>
-#include <cpp-sort/utility/logical_traits.h>
 #include "detail/raw_checkers.h"
 
 namespace cppsort
@@ -97,7 +96,7 @@ namespace cppsort
 
         template<typename Sorter, typename Iterable, typename Compare>
         struct has_comparison_sort:
-            utility::conjunction<
+            std::conjunction<
                 utility::is_callable<Sorter(Iterable&, Compare)>,
                 is_projection<utility::identity, Iterable, Compare>
             >
@@ -105,7 +104,7 @@ namespace cppsort
 
         template<typename Sorter, typename Iterable, typename Projection>
         struct has_projection_sort:
-            utility::conjunction<
+            std::conjunction<
                 utility::is_callable<Sorter(Iterable&, Projection)>,
                 is_projection<Projection, Iterable>
             >
@@ -113,7 +112,7 @@ namespace cppsort
 
         template<typename Sorter, typename Iterable, typename Compare, typename Projection>
         struct has_comparison_projection_sort:
-            utility::conjunction<
+            std::conjunction<
                 utility::is_callable<Sorter(Iterable&, Compare, Projection)>,
                 is_projection<Projection, Iterable, Compare>
             >
@@ -126,7 +125,7 @@ namespace cppsort
 
         template<typename Sorter, typename Iterator, typename Compare>
         struct has_comparison_sort_iterator:
-            utility::conjunction<
+            std::conjunction<
                 utility::is_callable<Sorter(Iterator, Iterator, Compare)>,
                 is_projection_iterator<utility::identity, Iterator, Compare>
             >
@@ -134,7 +133,7 @@ namespace cppsort
 
         template<typename Sorter, typename Iterator, typename Projection>
         struct has_projection_sort_iterator:
-            utility::conjunction<
+            std::conjunction<
                 utility::is_callable<Sorter(Iterator, Iterator, Projection)>,
                 is_projection_iterator<Projection, Iterator>
             >
@@ -142,7 +141,7 @@ namespace cppsort
 
         template<typename Sorter, typename Iterator, typename Compare, typename Projection>
         struct has_comparison_projection_sort_iterator:
-            utility::conjunction<
+            std::conjunction<
                 utility::is_callable<Sorter(Iterator, Iterator, Compare, Projection)>,
                 is_projection_iterator<Projection, Iterator, Compare>
             >

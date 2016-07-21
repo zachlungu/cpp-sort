@@ -37,9 +37,7 @@
 #include <cpp-sort/utility/static_const.h>
 #include "../detail/iterator_traits.h"
 
-namespace cppsort
-{
-namespace probe
+namespace cppsort::probe
 {
     namespace detail
     {
@@ -93,6 +91,6 @@ namespace probe
             sorter_facade<detail::runs_impl>
         >::value;
     }
-}}
+}
 
 #endif // CPPSORT_PROBES_RUNS_H_

@@ -14,9 +14,7 @@
 #ifndef CPPSORT_UTILITY_STATIC_CONST_H_
 #define CPPSORT_UTILITY_STATIC_CONST_H_
 
-namespace cppsort
-{
-namespace utility
+namespace cppsort::utility
 {
     template<typename T>
     struct static_const
@@ -26,6 +24,6 @@ namespace utility
 
     template<typename T>
     constexpr T static_const<T>::value;
-}}
+}
 
 #endif // CPPSORT_UTILITY_STATIC_CONST_H_

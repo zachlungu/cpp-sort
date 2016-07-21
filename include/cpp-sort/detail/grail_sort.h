@@ -30,9 +30,7 @@
 #include "three_way_compare.h"
 #include "upper_bound.h"
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     // cost: 2*len+nk^2/2
     template<typename RandomAccessIterator, typename Compare, typename Projection>
@@ -684,6 +682,6 @@ namespace detail
         grail_commonSort(first, last, buffer.begin(), buffer.size(),
                          three_way_compare<Compare>(compare), projection);
     }
-}}
+}
 
 #endif // CPPSORT_DETAIL_GRAIL_SORT_H_

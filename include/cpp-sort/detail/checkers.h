@@ -33,9 +33,7 @@
 #include <cpp-sort/utility/detection.h>
 #include "raw_checkers.h"
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     ////////////////////////////////////////////////////////////
     // High-level checkers (check with sorter_traits)
@@ -77,6 +75,6 @@ namespace detail
             Sorters...
         >
     {};
-}}
+}
 
 #endif // CPPSORT_DETAIL_CHECKERS_H_

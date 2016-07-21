@@ -32,9 +32,7 @@
 #include <utility>
 #include <cpp-sort/utility/detection.h>
 
-namespace cppsort
-{
-namespace utility
+namespace cppsort::utility
 {
     ////////////////////////////////////////////////////////////
     // Generic iter_move and iter_swap
@@ -131,6 +129,6 @@ namespace utility
         using utility::iter_swap;
         iter_swap(lhs.base(), rhs.base());
     }
-}}
+}
 
 #endif // CPPSORT_UTILITY_ITER_MOVE_H_

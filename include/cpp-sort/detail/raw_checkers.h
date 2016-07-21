@@ -30,9 +30,7 @@
 #include <type_traits>
 #include <cpp-sort/utility/any_all.h>
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     ////////////////////////////////////////////////////////////
     // Raw checkers (check with the type itself)
@@ -94,6 +92,6 @@ namespace detail
             Sorters...
         >
     {};
-}}
+}
 
 #endif // CPPSORT_DETAIL_RAW_CHECKERS_H_

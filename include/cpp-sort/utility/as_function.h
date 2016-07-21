@@ -21,9 +21,7 @@
 #include <utility>
 #include <cpp-sort/utility/static_const.h>
 
-namespace cppsort
-{
-namespace utility
+namespace cppsort::utility
 {
     namespace detail
     {
@@ -83,6 +81,6 @@ namespace utility
             detail::as_function_fn
         >::value;
     }
-}}
+}
 
 #endif // CPPSORT_UTILITY_AS_FUNCTION_H_

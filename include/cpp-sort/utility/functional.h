@@ -30,9 +30,7 @@
 #include <cmath>
 #include <utility>
 
-namespace cppsort
-{
-namespace utility
+namespace cppsort::utility
 {
     ////////////////////////////////////////////////////////////
     // Identity (mostly useful for projections)
@@ -83,6 +81,6 @@ namespace utility
             return sqrt(std::forward<T>(value));
         }
     };
-}}
+}
 
 #endif // CPPSORT_UTILITY_FUNCTIONAL_H_

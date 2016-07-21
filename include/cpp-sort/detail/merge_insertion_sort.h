@@ -41,9 +41,7 @@
 #include "swap_if.h"
 #include "swap_ranges.h"
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     ////////////////////////////////////////////////////////////
     // Iterator used to sort groups
@@ -463,6 +461,6 @@ namespace detail
             compare, projection
         );
     }
-}}
+}
 
 #endif // CPPSORT_DETAIL_MERGE_INSERTION_SORT_H_

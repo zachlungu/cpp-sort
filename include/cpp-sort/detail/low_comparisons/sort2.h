@@ -33,9 +33,7 @@
 #include <cpp-sort/utility/functional.h>
 #include "../swap_if.h"
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     template<>
     struct low_comparisons_sorter_impl<2u>
@@ -55,6 +53,6 @@ namespace detail
             iter_swap_if(first, first + 1u, compare, projection);
         }
     };
-}}
+}
 
 #endif // CPPSORT_DETAIL_LOW_COMPARISONS_SORT2_H_

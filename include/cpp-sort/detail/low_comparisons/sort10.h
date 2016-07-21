@@ -33,9 +33,7 @@
 #include <cpp-sort/utility/functional.h>
 #include "../front_insert.h"
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     template<>
     struct low_comparisons_sorter_impl<10u>
@@ -56,6 +54,6 @@ namespace detail
             front_insert<10u>(first, compare, projection);
         }
     };
-}}
+}
 
 #endif // CPPSORT_DETAIL_LOW_COMPARISONS_SORT10_H_

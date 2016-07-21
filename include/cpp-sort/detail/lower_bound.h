@@ -1,7 +1,7 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2015 Morwenn
+ * Copyright (c) 2015-2016 Morwenn
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -27,24 +27,16 @@
 ////////////////////////////////////////////////////////////
 // Headers
 ////////////////////////////////////////////////////////////
-#include <functional>
 #include <iterator>
 #include <cpp-sort/utility/as_function.h>
-#include <cpp-sort/utility/functional.h>
 
-namespace cppsort
+namespace cppsort::detail
 {
-namespace detail
-{
-    template<
-        typename ForwardIterator,
-        typename T,
-        typename Compare = std::less<>,
-        typename Projection = utility::identity
-    >
+    template<typename ForwardIterator, typename T,
+             typename Compare, typename Projection>
     auto lower_bound(ForwardIterator first, ForwardIterator last,
                      const T& value,
-                     Compare compare={}, Projection projection={})
+                     Compare compare, Projection projection)
         -> ForwardIterator
     {
         auto&& proj = utility::as_function(projection);
@@ -66,6 +58,6 @@ namespace detail
         }
         return first;
     }
-}}
+}
 
 #endif // CPPSORT_DETAIL_LOWER_BOUND_H_

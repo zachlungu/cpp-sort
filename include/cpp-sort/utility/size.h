@@ -34,9 +34,7 @@
 #include <cpp-sort/utility/begin_end.h>
 #include <cpp-sort/utility/detection.h>
 
-namespace cppsort
-{
-namespace utility
+namespace cppsort::utility
 {
     namespace detail
     {
@@ -72,6 +70,6 @@ namespace utility
     {
         return N;
     }
-}}
+}
 
 #endif // CPPSORT_UTILITY_SIZE_H_

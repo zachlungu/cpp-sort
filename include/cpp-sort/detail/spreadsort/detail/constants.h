@@ -7,18 +7,12 @@
 
 //  See http://www.boost.org/libs/sort for library home page.
 
-// Modified in 2015 by Morwenn for inclusion into cpp-sort
+// Modified in 2015-2016 by Morwenn for inclusion into cpp-sort
 
 #ifndef CPPSORT_DETAIL_SPREADSORT_DETAIL_CONSTANTS_H_
 #define CPPSORT_DETAIL_SPREADSORT_DETAIL_CONSTANTS_H_
 
-namespace cppsort
-{
-namespace detail
-{
-namespace spreadsort
-{
-namespace detail
+namespace cppsort::detail::spreadsort::detail
 {
     //Tuning constants
     //This should be tuned to your processor cache;
@@ -47,6 +41,6 @@ namespace detail
     float_log_finishing_count = 4,
     //There is a minimum size below which it is not worth using spreadsort
     min_sort_size = 1000 };
-}}}}
+}
 
 #endif // CPPSORT_DETAIL_SPREADSORT_DETAIL_CONSTANTS_H_

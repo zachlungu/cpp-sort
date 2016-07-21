@@ -38,13 +38,7 @@ Phil Endecott and Frank Gennari
 #include "../../iterator_traits.h"
 #include "../../pdqsort.h"
 
-namespace cppsort
-{
-namespace detail
-{
-namespace spreadsort
-{
-namespace detail
+namespace cppsort::detail::spreadsort::detail
 {
     //Casts a RandomAccessIter to the specified integer type
     template<typename Cast_type, typename RandomAccessIter, typename Projection>
@@ -392,6 +386,6 @@ namespace detail
       float_sort_rec<RandomAccessIter, std::int64_t, std::uint64_t>
         (first, last, bin_cache, 0, bin_sizes, projection);
     }
-}}}}
+}
 
 #endif // CPPSORT_DETAIL_SPREADSORT_DETAIL_FLOAT_SORT_H_

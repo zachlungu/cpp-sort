@@ -33,9 +33,7 @@
 #include "iterator_traits.h"
 #include "move.h"
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     template<
         typename ResultType,
@@ -136,6 +134,6 @@ namespace detail
         }
         return count;
     }
-}}
+}
 
 #endif // CPPSORT_DETAIL_COUNT_INVERSIONS_H_

@@ -33,9 +33,7 @@
 #include <cpp-sort/utility/functional.h>
 #include "../swap_if.h"
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     template<>
     struct sorting_network_sorter_impl<3u>
@@ -57,6 +55,6 @@ namespace detail
             iter_swap_if(first + 0u, first + 1u, compare, projection);
         }
     };
-}}
+}
 
 #endif // CPPSORT_DETAIL_SORTING_NETWORK_SORT3_H_

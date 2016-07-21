@@ -30,9 +30,7 @@
 #include <cpp-sort/utility/as_function.h>
 #include "../rotate_left.h"
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     template<>
     struct front_inserter_n<7u>
@@ -73,6 +71,6 @@ namespace detail
             }
         }
     };
-}}
+}
 
 #endif // CPPSORT_DETAIL_FRONT_INSERTER7_H_

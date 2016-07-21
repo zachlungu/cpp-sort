@@ -25,9 +25,7 @@
 #include <cpp-sort/utility/as_function.h>
 #include <cpp-sort/utility/iter_move.h>
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     namespace smoothsort_detail {
       /* A constant containing the number of Leonardo numbers that can fit into
@@ -476,6 +474,6 @@ namespace detail
       for (RandomIterator itr = end; itr != begin; --itr)
         smoothsort_detail::LeonardoHeapRemove(begin, itr, shape, comp, projection);
     }
-}}
+}
 
 #endif // CPPSORT_DETAIL_SMOOTHSORT_H_

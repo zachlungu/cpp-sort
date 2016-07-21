@@ -30,13 +30,7 @@ Phil Endecott and Frank Gennari
 #include <vector>
 #include "constants.h"
 
-namespace cppsort
-{
-namespace detail
-{
-namespace spreadsort
-{
-namespace detail
+namespace cppsort::detail::spreadsort::detail
 {
     //Well, we're not using Boost in the end
     template<bool Condition, typename T = void>
@@ -132,6 +126,6 @@ namespace detail
         bin_cache.resize(cache_end);
       return &(bin_cache[cache_offset]);
     }
-}}}}
+}
 
 #endif // CPPSORT_DETAIL_SPREADSORT_DETAIL_COMMON_H_

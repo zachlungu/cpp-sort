@@ -1,7 +1,7 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2015 Morwenn
+ * Copyright (c) 2015-2016 Morwenn
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -29,9 +29,7 @@
 ////////////////////////////////////////////////////////////
 #include <type_traits>
 
-namespace cppsort
-{
-namespace utility
+namespace cppsort::utility
 {
     ////////////////////////////////////////////////////////////
     // std::nonesuch from Library Fundamentals TS v2
@@ -98,6 +96,6 @@ namespace utility
 
     template<typename To, template<typename...> class Op, typename... Args>
     constexpr bool is_detected_convertible_v = is_detected_convertible<To, Op, Args...>::value;
-}}
+}
 
 #endif // CPPSORT_UTILITY_DETECTION_H_

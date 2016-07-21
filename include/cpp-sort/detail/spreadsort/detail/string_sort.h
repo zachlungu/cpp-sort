@@ -31,13 +31,8 @@ Phil Endecott and Frank Gennari
 #include "common.h"
 #include "constants.h"
 
-namespace cppsort
+namespace cppsort::detail::spreadsort::detail
 {
-namespace detail
-{
-namespace spreadsort
-{
-  namespace detail {
     static constexpr int max_step_size = 64;
 
     //Offsetting on identical characters.  This function works a chunk of
@@ -392,7 +387,6 @@ namespace spreadsort
       reverse_string_sort_rec<Unsigned_char_type>(first, last, 0, bin_cache, 0,
                                                   bin_sizes, projection);
     }
-  }
-}}}
+}
 
 #endif // CPPSORT_DETAIL_SPREADSORT_DETAIL_STRING_SORT_H_

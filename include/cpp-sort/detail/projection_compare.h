@@ -31,9 +31,7 @@
 #include <utility>
 #include <cpp-sort/utility/as_function.h>
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     template<typename Compare, typename Projection>
     class projection_compare
@@ -79,6 +77,6 @@ namespace detail
     {
         return { compare, projection };
     }
-}}
+}
 
 #endif // CPPSORT_DETAIL_PROJECTION_COMPARE_H_

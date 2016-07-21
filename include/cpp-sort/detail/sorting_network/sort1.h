@@ -32,9 +32,7 @@
 #include <cpp-sort/sorter_traits.h>
 #include <cpp-sort/utility/functional.h>
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     template<>
     struct sorting_network_sorter_impl<1u>
@@ -52,6 +50,6 @@ namespace detail
             -> void
         {}
     };
-}}
+}
 
 #endif // CPPSORT_DETAIL_SORTING_NETWORK_SORT1_H_

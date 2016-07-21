@@ -33,13 +33,8 @@ Phil Endecott and Frank Gennari
 #include "constants.h"
 #include "../../pdqsort.h"
 
-namespace cppsort
+namespace cppsort::detail::spreadsort::detail
 {
-namespace detail
-{
-namespace spreadsort
-{
-  namespace detail {
     // Return true if the list is sorted.  Otherwise, find the minimum and
     // maximum using <.
     template<typename RandomAccessIter, typename Projection>
@@ -224,7 +219,6 @@ namespace spreadsort
       spreadsort_rec<RandomAccessIter, Div_type, std::uintmax_t, Projection>(
           first, last, bin_cache, 0, bin_sizes, projection);
     }
-  }
-}}}
+}
 
 #endif // CPPSORT_DETAIL_SPREADSORT_DETAIL_INTEGER_SORT_H_

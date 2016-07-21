@@ -29,9 +29,7 @@
 ////////////////////////////////////////////////////////////
 #include <cpp-sort/utility/iter_move.h>
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     template<typename ForwardIterator1, typename ForwardIterator2>
     auto swap_ranges(ForwardIterator1 first1, ForwardIterator1 last1, ForwardIterator2 first2)
@@ -47,6 +45,6 @@ namespace detail
         }
         return first2;
     }
-}}
+}
 
 #endif // CPPSORT_DETAIL_SWAP_RANGES_H_

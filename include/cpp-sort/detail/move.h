@@ -23,9 +23,7 @@
 #include <cpp-sort/utility/iter_move.h>
 #include "iterator_traits.h"
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     ////////////////////////////////////////////////////////////
     // unwrap_iter
@@ -120,6 +118,6 @@ namespace detail
     {
         return move_backward_impl(unwrap_iter(first), unwrap_iter(last), unwrap_iter(result));
     }
-}}
+}
 
 #endif // CPPSORT_DETAIL_MOVE_H_

@@ -1,7 +1,7 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2015 Morwenn
+ * Copyright (c) 2015-2016 Morwenn
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -30,9 +30,7 @@
 #include <cstddef>
 #include <type_traits>
 
-namespace cppsort
-{
-namespace utility
+namespace cppsort::utility
 {
     namespace detail
     {
@@ -60,6 +58,6 @@ namespace utility
 
     template<std::size_t Value, std::size_t... Values>
     constexpr bool is_in_pack = detail::is_in_pack_impl<Value, Values...>::value;
-}}
+}
 
 #endif // CPPSORT_UTILITY_IS_IN_PACK_H_

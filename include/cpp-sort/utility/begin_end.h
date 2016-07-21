@@ -25,9 +25,7 @@
 #include <type_traits>
 #include <cpp-sort/utility/static_const.h>
 
-namespace cppsort
-{
-namespace utility
+namespace cppsort::utility
 {
     namespace adl_begin_end_detail
     {
@@ -342,6 +340,6 @@ namespace utility
     {
         constexpr auto&& crend = utility::static_const<crend_fn>::value;
     }
-}}
+}
 
 #endif // CPPSORT_UTILITY_BEGIN_END_H_

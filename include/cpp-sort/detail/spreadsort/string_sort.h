@@ -25,13 +25,8 @@ Phil Endecott and Frank Gennari
 #include "detail/string_sort.h"
 #include "../pdqsort.h"
 
-namespace cppsort
+namespace cppsort::detail::spreadsort
 {
-namespace detail
-{
-namespace spreadsort
-{
-
 /*! \brief String sort algorithm using random access iterators, allowing character-type overloads.\n
   (All variants fall back to @c pdqsort if the data size is too small, < @c detail::min_sort_size).
 
@@ -150,6 +145,6 @@ Some performance plots of runtime vs. n and log(range) are provided:\n
     else
       detail::reverse_string_sort(first, last, projection, unused);
   }
-}}}
+}
 
 #endif // CPPSORT_DETAIL_SPREADSORT_STRING_SORT_H_

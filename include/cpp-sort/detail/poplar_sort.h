@@ -35,9 +35,7 @@
 #include "insertion_sort.h"
 #include "iterator_traits.h"
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     template<typename RandomAccessIterator, typename Compare, typename Projection>
     auto sift(RandomAccessIterator first, difference_type_t<RandomAccessIterator> size,
@@ -181,6 +179,6 @@ namespace detail
             --size;
         }
     }
-}}
+}
 
 #endif // CPPSORT_DETAIL_POPLAR_SORT_H_

@@ -30,9 +30,7 @@
 #include <tuple>
 #include <cpp-sort/utility/as_function.h>
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     template<typename Compare, typename Projection>
     class indirect_compare
@@ -56,6 +54,6 @@ namespace detail
                 return std::get<0>(data)(proj(*lhs), proj(*rhs));
             }
     };
-}}
+}
 
 #endif // CPPSORT_DETAIL_INDIRECT_COMPARE_H_

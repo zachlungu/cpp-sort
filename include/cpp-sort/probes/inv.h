@@ -40,9 +40,7 @@
 #include "../detail/indirect_compare.h"
 #include "../detail/iterator_traits.h"
 
-namespace cppsort
-{
-namespace probe
+namespace cppsort::probe
 {
     namespace detail
     {
@@ -109,6 +107,6 @@ namespace probe
             sorter_facade<detail::inv_impl>
         >::value;
     }
-}}
+}
 
 #endif // CPPSORT_PROBES_INV_H_

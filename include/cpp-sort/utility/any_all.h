@@ -1,7 +1,7 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2015 Morwenn
+ * Copyright (c) 2015-2016 Morwenn
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -24,9 +24,7 @@
 #ifndef CPPSORT_UTILITY_ANY_ALL_H_
 #define CPPSORT_UTILITY_ANY_ALL_H_
 
-namespace cppsort
-{
-namespace utility
+namespace cppsort::utility
 {
     constexpr auto any(bool head)
         -> bool
@@ -53,6 +51,6 @@ namespace utility
     {
         return head && all(tail...);
     }
-}}
+}
 
 #endif // CPPSORT_UTILITY_ANY_ALL_H_

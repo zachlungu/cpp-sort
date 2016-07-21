@@ -32,9 +32,7 @@
 #include <cpp-sort/utility/iter_move.h>
 #include "iterator_traits.h"
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     //
     // This sorting algorithm isn't exposed to users of the
@@ -71,6 +69,6 @@ namespace detail
             }
         }
     }
-}}
+}
 
 #endif // CPPSORT_DETAIL_BUBBLE_SORT_H_

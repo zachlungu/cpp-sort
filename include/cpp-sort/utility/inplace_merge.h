@@ -58,9 +58,7 @@
 #include "../detail/memory.h"
 #include "../detail/rotate.h"
 
-namespace cppsort
-{
-namespace utility
+namespace cppsort::utility
 {
     namespace detail
     {
@@ -230,6 +228,6 @@ namespace utility
         using category = cppsort::detail::iterator_category_t<ForwardIterator>;
         detail::inplace_merge(first, middle, last, compare, projection, category{});
     }
-}}
+}
 
 #endif // CPPSORT_UTILITY_INPLACE_MERGE_H_

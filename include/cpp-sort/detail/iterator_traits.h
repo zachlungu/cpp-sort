@@ -32,9 +32,7 @@
 #include <utility>
 #include <cpp-sort/utility/iter_move.h>
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     //
     // A few type aliases to make it easier to write
@@ -70,6 +68,6 @@ namespace detail
 
     template<typename Iterator, typename Projection>
     using projected_t = std::decay_t<std::result_of_t<Projection(decltype(*std::declval<Iterator&>()))>>;
-}}
+}
 
 #endif // CPPSORT_DETAIL_ITERATOR_TRAITS_H_

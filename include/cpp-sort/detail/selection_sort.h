@@ -30,9 +30,7 @@
 #include <cpp-sort/utility/iter_move.h>
 #include "min_element.h"
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     template<typename ForwardIterator, typename Compare, typename Projection>
     auto selection_sort(ForwardIterator first, ForwardIterator last,
@@ -45,6 +43,6 @@ namespace detail
             iter_swap(it, min_element(it, last, compare, projection));
         }
     }
-}}
+}
 
 #endif // CPPSORT_DETAIL_SELECTION_SORT_H_

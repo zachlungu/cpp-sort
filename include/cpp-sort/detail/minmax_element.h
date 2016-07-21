@@ -1,7 +1,7 @@
 // Range v3 library
 //
 //  Copyright Eric Niebler 2014
-//  Modified in 2015 by Morwenn for inclusion into cpp-sort
+//  Modified in 2015-2016 by Morwenn for inclusion into cpp-sort
 //
 //  Use, modification and distribution is subject to the
 //  Boost Software License, Version 1.0. (See accompanying
@@ -12,6 +12,7 @@
 //
 // Implementation based on the code in libc++
 //   http://http://libcxx.llvm.org/
+//
 #ifndef CPPSORT_DETAIL_MINMAX_ELEMENT_H_
 #define CPPSORT_DETAIL_MINMAX_ELEMENT_H_
 
@@ -23,9 +24,7 @@
 #include <cpp-sort/utility/as_function.h>
 #include <cpp-sort/utility/functional.h>
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     template<
         typename ForwardIterator,
@@ -76,6 +75,6 @@ namespace detail
         }
         return result;
     }
-}}
+}
 
 #endif // CPPSORT_DETAIL_MINMAX_ELEMENT_H_

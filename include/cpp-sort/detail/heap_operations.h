@@ -21,9 +21,7 @@
 #include <cpp-sort/utility/iter_move.h>
 #include "iterator_traits.h"
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     template<class Compare, class RandomAccessIterator, class Projection>
     auto sift_down(RandomAccessIterator first, RandomAccessIterator,
@@ -123,6 +121,6 @@ namespace detail
             pop_heap<Compare>(first, last, comp, projection, n);
         }
     }
-}}
+}
 
 #endif // CPPSORT_DETAIL_HEAP_OPERATIONS_H_

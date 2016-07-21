@@ -1,7 +1,7 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2015 Morwenn
+ * Copyright (c) 2015-2016 Morwenn
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -30,9 +30,7 @@
 #include <cstddef>
 #include <utility>
 
-namespace cppsort
-{
-namespace utility
+namespace cppsort::utility
 {
     namespace detail
     {
@@ -91,6 +89,6 @@ namespace utility
         std::size_t Step = 1u
     >
     using make_index_range = make_integer_range<std::size_t, Begin, End, Step>;
-}}
+}
 
 #endif // CPPSORT_UTILITY_MAKE_INTEGER_RANGE_H_

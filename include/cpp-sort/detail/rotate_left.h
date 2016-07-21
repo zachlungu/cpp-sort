@@ -32,9 +32,7 @@
 #include <cpp-sort/utility/iter_move.h>
 #include "iterator_traits.h"
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     template<std::size_t N>
     struct rotate_left_n
@@ -72,6 +70,6 @@ namespace detail
     {
         return rotate_left_n<N>{}(first);
     }
-}}
+}
 
 #endif // CPPSORT_DETAIL_ROTATE_LEFT_H_

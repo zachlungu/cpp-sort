@@ -20,9 +20,7 @@
 #include <new>
 #include <type_traits>
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     ////////////////////////////////////////////////////////////
     // Deleter for ::operator new(std::size_t)
@@ -99,6 +97,6 @@ namespace detail
         // Number of allocated objects to destroy
         std::size_t size;
     };
-}}
+}
 
 #endif // CPPSORT_DETAIL_DESTRUCT_N_H_

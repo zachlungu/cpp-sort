@@ -35,9 +35,7 @@
 #include "iterator_traits.h"
 #include "iter_sort3.h"
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     namespace pdqsort_detail {
         enum {
@@ -329,6 +327,6 @@ namespace detail
                                      comp, projection,
                                      utility::log2(end - begin));
     }
-}}
+}
 
 #endif // CPPSORT_DETAIL_PDQSORT_H_

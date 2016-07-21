@@ -28,9 +28,7 @@
 #include "swap_ranges.h"
 #include "upper_bound.h"
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     template<typename Iterator>
     struct Range
@@ -912,6 +910,6 @@ namespace detail
     {
         Wiki::sort<BufferProvider>(first, last, compare, projection);
     }
-}}
+}
 
 #endif // CPPSORT_DETAIL_BLOCK_SORT_H_

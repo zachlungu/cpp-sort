@@ -29,9 +29,7 @@
 ////////////////////////////////////////////////////////////
 #include <type_traits>
 
-namespace cppsort
-{
-namespace utility
+namespace cppsort::utility
 {
     namespace detail
     {
@@ -59,6 +57,6 @@ namespace utility
     struct is_callable:
         detail::is_callable_impl<T, Ret>
     {};
-}}
+}
 
 #endif // CPPSORT_UTILITY_IS_CALLABLE_H_

@@ -31,9 +31,7 @@
 #include <cpp-sort/utility/as_function.h>
 #include <cpp-sort/utility/iter_move.h>
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     template<typename Iterator, typename Compare, typename Projection>
     auto iter_sort3(Iterator a, Iterator b, Iterator c,
@@ -70,6 +68,6 @@ namespace detail
             }
         }
     }
-}}
+}
 
 #endif // CPPSORT_DETAIL_ITER_SORT3_H_

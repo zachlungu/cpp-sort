@@ -1,7 +1,7 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2015 Morwenn
+ * Copyright (c) 2015-2016 Morwenn
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -31,9 +31,7 @@
 #include <cpp-sort/utility/as_function.h>
 #include <cpp-sort/utility/functional.h>
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     template<
         typename ForwardIterator,
@@ -59,6 +57,6 @@ namespace detail
         }
         return min;
     }
-}}
+}
 
 #endif // CPPSORT_DETAIL_MIN_ELEMENT_H_

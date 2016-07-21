@@ -30,9 +30,7 @@
 #include <cstddef>
 #include <functional>
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     template<
         typename Compare = std::less<>,
@@ -71,6 +69,6 @@ namespace detail
             // in order to increment the right count
             comparison_counter& counter;
     };
-}}
+}
 
 #endif // CPPSORT_DETAIL_COMPARISON_COUNTER_H_

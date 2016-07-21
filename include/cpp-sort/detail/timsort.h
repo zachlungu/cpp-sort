@@ -49,9 +49,7 @@
 #include "three_way_compare.h"
 #include "upper_bound.h"
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     template<typename RandomAccessIterator, typename Compare, typename Projection>
     class TimSort
@@ -684,6 +682,6 @@ namespace detail
     {
         TimSort<RandomAccessIterator, Compare, Projection>::sort(first, last, compare, projection);
     }
-}}
+}
 
 #endif // CPPSORT_DETAIL_TIMSORT_H_

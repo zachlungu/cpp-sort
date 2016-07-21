@@ -29,9 +29,7 @@
 ////////////////////////////////////////////////////////////
 #include "heap_operations.h"
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     template<typename RandomAccessIterator, typename Compare, typename Projection>
     auto heapsort(RandomAccessIterator first, RandomAccessIterator last,
@@ -41,6 +39,6 @@ namespace detail
         make_heap(first, last, compare, projection);
         sort_heap(first, last, compare, projection);
     }
-}}
+}
 
 #endif // CPPSORT_DETAIL_HEAPSORT_H_

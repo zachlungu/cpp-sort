@@ -28,9 +28,7 @@
 #include "rotate.h"
 #include "upper_bound.h"
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     template<typename Predicate>
     class negate
@@ -245,6 +243,6 @@ namespace detail
         return inplace_merge_impl<Comp_ref>(first, middle, last, comp, projection,
                                             len1, len2, buff.first, buff.second);
     }
-}}
+}
 
 #endif // CPPSORT_DETAIL_INPLACE_MERGE_H_

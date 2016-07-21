@@ -38,9 +38,7 @@
 #include "insertion_sort.h"
 #include "iterator_traits.h"
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     // std::unique_ptr to handle memory allocated with
     // std::get_temporary_buffer
@@ -219,6 +217,6 @@ namespace detail
         using category = iterator_category_t<ForwardIterator>;
         merge_sort(first, last, size, compare, projection, category{});
     }
-}}
+}
 
 #endif // CPPSORT_DETAIL_MERGE_SORT_H_

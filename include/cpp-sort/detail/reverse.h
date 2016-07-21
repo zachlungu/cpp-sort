@@ -19,9 +19,7 @@
 #include <cpp-sort/utility/iter_move.h>
 #include "iterator_traits.h"
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     template<typename BidirectionalIterator>
     auto reverse_impl(BidirectionalIterator first, BidirectionalIterator last,
@@ -59,6 +57,6 @@ namespace detail
     {
         reverse_impl(first, last, iterator_category_t<BidirectionalIterator>{});
     }
-}}
+}
 
 #endif // CPPSORT_DETAIL_REVERSE_H_

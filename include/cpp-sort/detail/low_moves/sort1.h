@@ -32,9 +32,7 @@
 #include <cpp-sort/sorter_traits.h>
 #include <cpp-sort/utility/functional.h>
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     template<>
     struct low_moves_sorter_impl<1u>
@@ -52,6 +50,6 @@ namespace detail
             -> void
         {}
     };
-}}
+}
 
 #endif // CPPSORT_DETAIL_LOW_MOVES_SORT1_H_

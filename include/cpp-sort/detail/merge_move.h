@@ -19,9 +19,7 @@
 #include <cpp-sort/utility/iter_move.h>
 #include "move.h"
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     template<typename InputIterator1, typename InputIterator2, typename OutputIterator,
              typename Compare, typename Projection1, typename Projection2>
@@ -52,6 +50,6 @@ namespace detail
         }
         return detail::move(first2, last2, result);
     }
-}}
+}
 
 #endif // CPPSORT_DETAIL_MERGE_MOVE_H_

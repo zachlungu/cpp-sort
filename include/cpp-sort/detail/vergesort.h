@@ -37,9 +37,7 @@
 #include "quicksort.h"
 #include "reverse.h"
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     // In-place merge where [first, middle1), [middle1, middle2)
     // and [middle2, last) are sorted. The two in-place merges are
@@ -320,6 +318,6 @@ namespace detail
         using category = iterator_category_t<BidirectionalIterator>;
         vergesort(first, last, compare, projection, category{});
     }
-}}
+}
 
 #endif // CPPSORT_DETAIL_VERGESORT_H_

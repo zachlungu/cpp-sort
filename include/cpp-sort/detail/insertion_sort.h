@@ -33,9 +33,7 @@
 #include "upper_bound.h"
 #include "rotate.h"
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     template<typename BidirectionalIterator, typename Compare, typename Projection>
     auto insertion_sort(BidirectionalIterator first, BidirectionalIterator last,
@@ -91,6 +89,6 @@ namespace detail
         using category = iterator_category_t<ForwardIterator>;
         insertion_sort(first, last, compare, projection, category{});
     }
-}}
+}
 
 #endif // CPPSORT_DETAIL_INSERTION_SORT_H_

@@ -1,7 +1,7 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2015 Morwenn
+ * Copyright (c) 2015-2016 Morwenn
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -29,9 +29,7 @@
 ////////////////////////////////////////////////////////////
 #include <cstddef>
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     //
     // Family of fixed-size functions which will try to insert
@@ -56,7 +54,7 @@ namespace detail
     {
         return front_inserter_n<N>{}(first, compare, projection);
     }
-}}
+}
 
 // Specializations of low_moves_sorter_n for some values of N
 #include "front_inserter/inserter0.h"

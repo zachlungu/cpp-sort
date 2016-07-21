@@ -36,9 +36,7 @@
 #include <cpp-sort/utility/functional.h>
 #include <cpp-sort/utility/iter_move.h>
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     ////////////////////////////////////////////////////////////
     // swap_if
@@ -130,6 +128,6 @@ namespace detail
 
         swap_if(*lhs, *rhs, compare, projection);
     }
-}}
+}
 
 #endif // CPPSORT_DETAIL_SWAP_IF_H_

@@ -37,9 +37,7 @@
 #include "iter_sort3.h"
 #include "partition.h"
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     // Function that dispatches the sort to another algorithm
     // when the collection is too small for quicksort to be
@@ -139,6 +137,6 @@ namespace detail
         quicksort(first, middle1, size_left, compare, projection);
         quicksort(middle2, last, size_right, compare, projection);
     }
-}}
+}
 
 #endif // CPPSORT_DETAIL_QUICKSORT_H_

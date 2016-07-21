@@ -31,9 +31,7 @@
 #include <cstddef>
 #include <memory>
 
-namespace cppsort
-{
-namespace utility
+namespace cppsort::utility
 {
     ////////////////////////////////////////////////////////////
     // Fixed-size buffer
@@ -185,6 +183,6 @@ namespace utility
                 }
         };
     };
-}}
+}
 
 #endif // CPPSORT_UTILITY_BUFFER_H_

@@ -30,11 +30,7 @@ Doxygen comments by Paul A. Bristow Jan 2015
 #include "detail/integer_sort.h"
 #include "../pdqsort.h"
 
-namespace cppsort
-{
-namespace detail
-{
-namespace spreadsort
+namespace cppsort::detail::spreadsort
 {
   //Top-level sorting call for integers.
 
@@ -93,6 +89,6 @@ Some performance plots of runtime vs. n and log(range) are provided:\n
     else
       detail::integer_sort(first, last, proj(*first) >> 0, projection);
   }
-}}}
+}
 
 #endif // CPPSORT_DETAIL_SPREADSORT_INTEGER_SORT_H_

@@ -32,9 +32,7 @@
 #include <cpp-sort/utility/functional.h>
 #include "minmax_element.h"
 
-namespace cppsort
-{
-namespace detail
+namespace cppsort::detail
 {
     template<
         typename ForwardIterator,
@@ -92,6 +90,6 @@ namespace detail
         }
         return result;
     }
-}}
+}
 
 #endif // CPPSORT_DETAIL_MINMAX_ELEMENT_AND_IS_SORTED_H_

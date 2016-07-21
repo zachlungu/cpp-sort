@@ -1,7 +1,7 @@
 /*
  * The MIT License (MIT)
  *
- * Copyright (c) 2015 Morwenn
+ * Copyright (c) 2015-2016 Morwenn
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -30,9 +30,7 @@
 #include <cstddef>
 #include <limits>
 
-namespace cppsort
-{
-namespace utility
+namespace cppsort::utility
 {
     // Returns 2^ceil(log2(n)), assumes n > 0
     template<typename Unsigned>
@@ -72,6 +70,6 @@ namespace utility
         }
         return log;
     }
-}}
+}
 
 #endif // CPPSORT_UTILITY_BITOPS_H_

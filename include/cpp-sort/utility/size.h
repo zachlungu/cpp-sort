@@ -27,7 +27,6 @@
 ////////////////////////////////////////////////////////////
 // Headers
 ////////////////////////////////////////////////////////////
-#include <cstddef>
 #include <iterator>
 #include <type_traits>
 #include <utility>
@@ -39,22 +38,23 @@ namespace cppsort::utility
     namespace detail
     {
         template<typename Iterable>
-        using has_size_method_t = decltype(std::declval<const Iterable&>().size());
+        using can_use_std_size_t = decltype(std::size(std::declval<const Iterable&>()));
     }
 
     template<
         typename Iterable,
-        typename = std::enable_if_t<is_detected_v<detail::has_size_method_t, Iterable>>
+        typename = std::enable_if_t<is_detected_v<detail::can_use_std_size_t, Iterable>>
     >
     constexpr auto size(const Iterable& iterable)
-        -> decltype(iterable.size())
+        noexcept(noexcept(std::size(iterable)))
+        -> decltype(std::size(iterable))
     {
-        return iterable.size();
+        return std::size(iterable);
     }
 
     template<
         typename Iterable,
-        typename = std::enable_if_t<not is_detected_v<detail::has_size_method_t, Iterable>>
+        typename = std::enable_if_t<not is_detected_v<detail::can_use_std_size_t, Iterable>>
     >
     constexpr auto size(const Iterable& iterable)
         -> decltype(std::distance(utility::begin(iterable),
@@ -62,13 +62,6 @@ namespace cppsort::utility
     {
         return std::distance(utility::begin(iterable),
                              utility::end(iterable));
-    }
-
-    template<typename T, std::size_t N>
-    constexpr auto size(const T (&array)[N]) noexcept
-        -> std::size_t
-    {
-        return N;
     }
 }
 

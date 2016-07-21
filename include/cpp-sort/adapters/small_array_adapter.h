@@ -65,7 +65,7 @@ namespace cppsort
     // and thus void is given
 
     template<
-        template<std::size_t> class FixedSizeSorter,
+        template<std::size_t> typename FixedSizeSorter,
         typename Indices = typename detail::has_domain<
             fixed_sorter_traits<FixedSizeSorter>
         >::domain
@@ -73,7 +73,7 @@ namespace cppsort
     struct small_array_adapter;
 
     template<
-        template<std::size_t> class FixedSizeSorter,
+        template<std::size_t> typename FixedSizeSorter,
         std::size_t... Indices
     >
     struct small_array_adapter<FixedSizeSorter, std::index_sequence<Indices...>>:
@@ -109,7 +109,7 @@ namespace cppsort
         }
     };
 
-    template<template<std::size_t> class FixedSizeSorter>
+    template<template<std::size_t> typename FixedSizeSorter>
     struct small_array_adapter<FixedSizeSorter, void>:
         fixed_sorter_traits<FixedSizeSorter>
     {
@@ -140,7 +140,7 @@ namespace cppsort
     // is_stable specialization
 
     template<
-        template<std::size_t> class FixedSizeSorter,
+        template<std::size_t> typename FixedSizeSorter,
         typename Indices,
         typename T, std::size_t N,
         typename... Args
@@ -150,7 +150,7 @@ namespace cppsort
     {};
 
     template<
-        template<std::size_t> class FixedSizeSorter,
+        template<std::size_t> typename FixedSizeSorter,
         typename Indices,
         typename T, std::size_t N,
         typename... Args

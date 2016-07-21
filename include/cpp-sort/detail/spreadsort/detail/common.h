@@ -110,7 +110,7 @@ namespace cppsort::detail::spreadsort::detail
 
     // Resizes the bin cache and bin sizes, and initializes each bin size to 0.
     // This generates the memory overhead to use in radix sorting.
-    template <class RandomAccessIter>
+    template <typename RandomAccessIter>
     auto size_bins(std::size_t *bin_sizes,
                    std::vector<RandomAccessIter> &bin_cache,
                    unsigned cache_offset, unsigned &cache_end,

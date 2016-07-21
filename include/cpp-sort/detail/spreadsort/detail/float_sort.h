@@ -49,9 +49,9 @@ namespace cppsort::detail::spreadsort::detail
       auto&& proj = utility::as_function(projection);
 
       //Only cast IEEE floating-point numbers, and only to same-sized integers
-      static_assert(sizeof(Cast_type) == sizeof(Data_type), "");
-      static_assert(std::numeric_limits<Data_type>::is_iec559, "");
-      static_assert(std::numeric_limits<Cast_type>::is_integer, "");
+      static_assert(sizeof(Cast_type) == sizeof(Data_type));
+      static_assert(std::numeric_limits<Data_type>::is_iec559);
+      static_assert(std::numeric_limits<Cast_type>::is_integer);
       Cast_type result;
       std::memcpy(std::addressof(result),
                   std::addressof(proj(*floatiter)),

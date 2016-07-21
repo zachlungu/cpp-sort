@@ -96,7 +96,7 @@ namespace cppsort::detail::spreadsort::detail
             std::size_t minSize = (std::min)(proj(x).size(), proj(y).size());
             for (std::size_t u = std::get<0>(data) ; u < minSize ; ++u)
             {
-                static_assert(sizeof(proj(x)[u]) == sizeof(Unsigned_char_type), "");
+                static_assert(sizeof(proj(x)[u]) == sizeof(Unsigned_char_type));
                 if (static_cast<Unsigned_char_type>(proj(x)[u]) !=
                     static_cast<Unsigned_char_type>(proj(y)[u]))
                 {
@@ -128,7 +128,7 @@ namespace cppsort::detail::spreadsort::detail
             std::size_t minSize = (std::min)(proj(x).size(), proj(y).size());
             for (std::size_t u = std::get<0>(data) ; u < minSize ; ++u)
             {
-                static_assert(sizeof(proj(x)[u]) == sizeof(Unsigned_char_type), "");
+                static_assert(sizeof(proj(x)[u]) == sizeof(Unsigned_char_type));
                 if (static_cast<Unsigned_char_type>(proj(x)[u]) !=
                     static_cast<Unsigned_char_type>(proj(y)[u]))
                 {
